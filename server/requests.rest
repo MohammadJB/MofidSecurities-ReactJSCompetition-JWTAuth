@@ -1,0 +1,23 @@
+####
+POST http://127.0.0.1:4000/api/login
+Content-Type: application/json
+
+{
+    "email": "user@test.com",
+    "password": "123456"
+}
+
+###
+POST http://127.0.0.1:4000/api/user
+Content-Type: application/json
+jwt:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXJAdGVzdC5jb20iLCJpYXQiOjE2NDM1OTU5ODksImV4cCI6MTY0MzU5NjEwOX0.xBnm50Q3TE6InFvG-5uMw8SijAYhRYoemxNA02WQu8w
+
+
+
+###
+POST http://127.0.0.1:4000/api/token
+Content-Type: application/json
+
+{
+    "token": "eyJhbGciOiJIUzI1NiJ9.dXNlckB0ZXN0LmNvbQ.1HTlZVJ7aBR7Vyow6ViDpEKXw17WKGzHdvy-bDKzHkU"
+}
