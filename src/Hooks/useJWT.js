@@ -53,9 +53,11 @@ function useJWT() {
         .catch((error) => {
           refreshToken().then(() => {
             const accessToken = localStorage.getItem("access");
-            axios.post(url, data, { jwt: accessToken }).then((response) => {
-              resolve(response);
-            });
+            axios
+              .post(url, data, { headers: { jwt: accessToken } })
+              .then((response) => {
+                resolve(response);
+              });
           });
         });
     });

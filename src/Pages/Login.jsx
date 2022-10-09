@@ -75,9 +75,7 @@ const Login = (props) => {
         </>
       )}
 
-      {validateInputs() && (
-        <LoginButton onClick={handleSubmit} disabled={false} />
-      )}
+      <LoginButton onClick={handleSubmit} disabled={!validateInputs()} />
     </Card>
   );
 };
