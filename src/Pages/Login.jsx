@@ -37,7 +37,7 @@ const Login = (props) => {
       });
   };
 
-  const validateEmail = () => {
+  const validateEmail = (email) => {
     return String(email)
       .toLowerCase()
       .match(
@@ -45,8 +45,8 @@ const Login = (props) => {
       );
   };
 
-  const validateInputs = () =>
-    email && password && (!showError || notRobot) && validateEmail();
+  const validateInputs = (email, password, notRobot,showError) =>
+    email && password && (!showError || notRobot) && validateEmail(email);
 
   return (
     <Card>
@@ -75,7 +75,7 @@ const Login = (props) => {
         </>
       )}
 
-      <LoginButton onClick={handleSubmit} disabled={!validateInputs()} />
+      <LoginButton onClick={handleSubmit} disabled={!validateInputs(email, password, notRobot,showError)} />
     </Card>
   );
 };

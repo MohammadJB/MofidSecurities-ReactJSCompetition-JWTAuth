@@ -1,4 +1,3 @@
-import React from "react";
 import axios from "axios";
 
 function useJWT() {
@@ -51,10 +50,9 @@ function useJWT() {
           resolve(response);
         })
         .catch((error) => {
-          refreshToken().then(() => {
-            const accessToken = localStorage.getItem("access");
+          refreshToken(tokens).then(() => {
             axios
-              .post(url, data, { headers: { jwt: accessToken } })
+              .post(url, data, { headers: { jwt: tokens.access } })
               .then((response) => {
                 resolve(response);
               });
